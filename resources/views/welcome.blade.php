@@ -88,6 +88,7 @@
                     <a href="{{ url('/') }}/counter/create">Counter</a>
                     <a href="{{ url('/') }}/formbuilder/3/create">Add Product</a>
                     <a href="{{ url('/') }}/product/create">Add Stock</a> 
+                    <a href="{{ url('/') }}/product">Show Stock</a>
                     <a href="{{ url('/') }}/formbuilder/1/create">Add Category</a>
                     <a href="{{ url('/') }}/formbuilder/2/create">Add Unit</a>                              
                 </div>

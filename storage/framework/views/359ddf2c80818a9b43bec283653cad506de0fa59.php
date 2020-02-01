@@ -88,6 +88,7 @@
                     <a href="<?php echo e(url('/')); ?>/counter/create">Counter</a>
                     <a href="<?php echo e(url('/')); ?>/formbuilder/3/create">Add Product</a>
                     <a href="<?php echo e(url('/')); ?>/product/create">Add Stock</a> 
+                    <a href="<?php echo e(url('/')); ?>/product">Show Stock</a>
                     <a href="<?php echo e(url('/')); ?>/formbuilder/1/create">Add Category</a>
                     <a href="<?php echo e(url('/')); ?>/formbuilder/2/create">Add Unit</a>                              
                 </div>

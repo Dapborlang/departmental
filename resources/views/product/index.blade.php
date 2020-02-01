@@ -36,5 +36,18 @@
 			</div>
 		</div>
 	</form>
+	<table>
+		<tr>
+			<td>Sl No.</td>
+			<td>Name</td>
+			<td>Remaining</td>
+		</tr>
+		@foreach($product as $item)
+		<tr>
+			<td>{{$loop->iteration}}</td>
+			<td>{{$item->name}}</td>
+		</tr>
+		@endforeach
+	</table>
 </div>
 @endsection

@@ -8,6 +8,11 @@ class ProductDetail extends Model
 {
     protected $guarded = ['id'];
 
+    public function product()
+    {
+        return $this->belongsTo('App\Product');
+    }
+
     public function getCreatedAtAttribute($value)
     {
     	if($value!='')
