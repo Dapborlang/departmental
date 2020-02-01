@@ -6,7 +6,7 @@ use App\Product;
 use App\ProductDetail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use DB;
 class ProductController extends Controller
 {
     /**
@@ -16,7 +16,19 @@ class ProductController extends Controller
      */
     public function index()
     { 
-        return view('product.index');
+        $product=Product::all();
+        foreach($product as $item)
+        {
+            $credit=ProductDetail::where('product_id',$item->id)
+            ->where('type','CREDIT')
+            ->sum('quantity');
+            $debit=ProductDetail::where('product_id',$item->id)
+            ->where('type','DEBIT')
+            ->sum('quantity');
+            $ProductDetail[$item->name]['credit']=$credit;
+            $ProductDetail[$item->name]['debit']=$debit;
+        }
+        return view('product.index',compact('ProductDetail'));
     }
 
     /**
