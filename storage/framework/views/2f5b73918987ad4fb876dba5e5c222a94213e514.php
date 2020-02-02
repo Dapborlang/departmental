@@ -4,11 +4,10 @@
 	<title>Invoice</title>
 </head>
 <body>
-	<center>Braddy Departmental Store<br>
+	<center>All Discounted Departmental Store<br>
 		Mawlai Mawroh<br>
-		GSTIN:
 		<hr>
-		TAX INVOICE
+		INVOICE
 		<hr>
 	</center>
 	Invoice No: <?php echo e($invoice->id); ?> Dt: <?php echo e($invoice->created_at); ?>
@@ -19,13 +18,16 @@
 			<td>
 				Sl. No
 			</td>
-			<td colspan="2">
+			<td colspan="3">
 				Details
 			</td>
 		</tr>
 		<tr>
 			<td style='border-bottom:1pt solid black'>
 				Qnty
+			</td>
+			<td style='border-bottom:1pt solid black'>
+				MRP
 			</td>
 			<td style='border-bottom:1pt solid black'>
 				Rate
@@ -51,6 +53,10 @@
 
 			</td>
 			<td>
+				<?php echo e($item->product->m_r_p); ?>
+
+			</td>
+			<td>
 				<?php echo e($item->rate); ?>
 
 			</td>
@@ -68,7 +74,7 @@
 		<tr>
 			<td  style='border-top:1pt solid black'>
 			</td>
-			<td  style='border-top:1pt solid black'>
+			<td colspan="2" style='border-top:1pt solid black'>
 				Total
 			</td>
 			<td style='border-top:1pt solid black'>

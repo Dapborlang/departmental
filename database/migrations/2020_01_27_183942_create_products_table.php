@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('category_id');
             $table->string('name')->unique();            
             $table->unsignedBigInteger('unit_id');
+            $table->decimal('m_r_p');
             $table->decimal('rate');
             $table->decimal('gst');
             $table->string('hsn')->nullable();

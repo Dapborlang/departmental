@@ -11,5 +11,15 @@ class Sale extends Model
         return $this->belongsTo('App\Product');
     }
 
+    public function getCreatedAtAttribute($value)
+    {
+    	if($value!='')
+    	{
+    		$date=date_create($value);
+        	return date_format($date,"d/m/Y h:i");
+    	}
+    	return '';
+    	
+    }
     
 }

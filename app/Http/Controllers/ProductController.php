@@ -16,7 +16,8 @@ class ProductController extends Controller
      */
     public function index()
     { 
-        $product=Product::all();
+        $product=Product::orderBy('name')
+        ->get();
         foreach($product as $item)
         {
             $credit=ProductDetail::where('product_id',$item->id)
@@ -25,8 +26,9 @@ class ProductController extends Controller
             $debit=ProductDetail::where('product_id',$item->id)
             ->where('type','DEBIT')
             ->sum('quantity');
-            $ProductDetail[$item->name]['credit']=$credit;
-            $ProductDetail[$item->name]['debit']=$debit;
+            $ProductDetail[$item->id]['name']=$item->name;
+            $ProductDetail[$item->id]['remaining']=$credit-$debit;
+            $ProductDetail[$item->id]['barcode']=$item->barcode;
         }
         return view('product.index',compact('ProductDetail'));
     }

@@ -10,4 +10,15 @@ class Invoice extends Model
     {
         return $this->hasMany('App\Sale');
     }
+
+    public function getCreatedAtAttribute($value)
+    {
+    	if($value!='')
+    	{
+    		$date=date_create($value);
+        	return date_format($date,"d/m/Y h:i");
+    	}
+    	return '';
+    	
+    }
 }
