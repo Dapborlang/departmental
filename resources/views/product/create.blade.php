@@ -34,7 +34,7 @@ $(document).ready(function(){
 			<div class="col-sm-3 bg-dark text-white">
 				<div class="form-group">
 					<label for="">Barcode:</label>
-					 <input id="bardcode" type="text" class="form-control form-control-sm">
+					 <input id="bardcode" type="text" class="form-control form-control-sm" autofocus>
 				</div>
 			</div>		
 

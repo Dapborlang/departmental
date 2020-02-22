@@ -15,7 +15,8 @@ $(document).ready(function(){
 	        {
 	        	$("#p_id").val(data[0]['id']);
 	        	$("#name").val(data[0]['name']);
-	        	$("#rate").val(data[0]['rate']);	        	
+	        	$("#rate").val(data[0]['rate']);
+	        	$("#quantity").focus();	        	
 	        }
 	    });		
 	});
@@ -39,7 +40,8 @@ $(document).ready(function(){
 		
 		data+='<button id="'+product_id+'b" type="button" class="btn btn-danger btn-sm" onclick="remove('+product_id+')">Remove Item</button></div></div>';
 		$("#data").append(data);	
-		$("#counter")[0].reset();;    
+		$("#counter")[0].reset();  
+		$("#bardcode").focus();
 		e.preventDefault();
 	});
 	
@@ -65,7 +67,7 @@ function remove(id)
 			<div class="col-sm-3 bg-dark text-white">
 				<div class="form-group">
 					<label for="">Barcode:</label>
-					 <input id="bardcode" type="text" class="form-control form-control-sm" name="bardcode" required>
+					 <input id="bardcode" type="text" class="form-control form-control-sm" name="bardcode" required autofocus>
 				</div>
 			</div>
 			

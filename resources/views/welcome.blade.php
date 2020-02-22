@@ -90,7 +90,8 @@
                     <a href="{{ url('/') }}/product/create">Add Stock</a> 
                     <a href="{{ url('/') }}/product">Show Stock</a>
                     <a href="{{ url('/') }}/formbuilder/1/create">Add Category</a>
-                    <a href="{{ url('/') }}/formbuilder/2/create">Add Unit</a>                              
+                    <a href="{{ url('/') }}/formbuilder/2/create">Add Unit</a>     
+                    <a href="http://localhost/phpmyadmin/sql.php?server=1&db=braddy&table=products&pos=0" target="_BLANK">Admin</a>                          
                 </div>
             </div>
         </div>
