@@ -61,6 +61,11 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            body {
+                min-height: 100vh;
+                background-color: #4ca1af;
+                background-image: linear-gradient(135deg, #f0f0f0 0%, #b4b4b4 100%);
+            }
         </style>
     </head>
     <body>
@@ -87,6 +92,7 @@
                 <div class="links">
                     <a href="{{ url('/') }}/counter/create">Counter</a>
                     <a href="{{ url('/') }}/formbuilder/3/create">Add Product</a>
+                    <a href="{{ url('/') }}/formbuilder/3">Show Products</a>
                     <a href="{{ url('/') }}/product/create">Add Stock</a> 
                     <a href="{{ url('/') }}/product">Show Stock</a>
                     <a href="{{ url('/') }}/formbuilder/1/create">Add Category</a>

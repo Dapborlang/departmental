@@ -18,6 +18,7 @@
     <!-- Styles -->
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(asset('jquery-ui/jquery-ui.min.css')); ?>" rel="stylesheet">
+    
     <?php echo $__env->yieldContent('script'); ?>
 </head>
 <body <?php echo $__env->yieldContent('body'); ?>>

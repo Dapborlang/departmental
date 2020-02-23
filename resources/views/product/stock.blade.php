@@ -9,6 +9,11 @@
 
 @section('content')
 <div class="container-fluid p-3 my-3 border">	
+	@if(session()->has('message'))
+	    <div class="alert alert-success">
+	        {{ session()->get('message') }}
+	    </div>
+	@endif
 	<div class="card bg-light text-black">
 		<div class="card-header bg-info">{{$product->name}}</div>
 		<div class="card-body">	
@@ -23,7 +28,7 @@
 				<tr>
 					<td>{{$loop->iteration}}</td>
 					<td>{{$item->created_at}}</td>
-					<td>{{$item->quantity}}</td>
+					<td><form method="POST" action="{{ url('/') }}/stock/update/{{$item->id}}" >{{csrf_field()}}{{ method_field('PUT') }}<input type="text" name="quantity" value="{{$item->quantity}}"><button>Update</button></form></td>
 					<td>{{$item->type}}</td>
 				</tr>
 				@endforeach

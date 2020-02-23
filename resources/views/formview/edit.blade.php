@@ -42,8 +42,9 @@ $(document).ready(function(){
 	        {{ session()->get('message') }}
 	    </div>
 	@endif
-	<form id="partybillForm" method="POST" action="{{ url('/') }}/{{$model->route}}/{{$model->id}}" target="">
+	<form method="POST" action="{{ url('/') }}/frmbuilder/update/{{$model->id}}/{{$content->id}}" target="">
 	{{ csrf_field() }}
+	{{ method_field('PUT') }}
 	<div class="card bg-secondary text-white">
 		<div class="card-header bg-info">{{$model->header}}</div>
 		<div class="card-body">	
@@ -92,7 +93,7 @@ $(document).ready(function(){
 		                	@endforeach
 		                </select>
 		                @else
-		                <input type="text" class="form-control @if(isset($class) && array_key_exists($item, $class)) {{$class[$item]}} @endif" id="{{$item}}" name="{{$item}}">
+		                <input type="text" class="form-control @if(isset($class) && array_key_exists($item, $class)) {{$class[$item]}} @endif" id="{{$item}}" name="{{$item}}" value="{{$content-> $item}}">
 		                @endif
 					</div>
 				</div>
@@ -103,7 +104,7 @@ $(document).ready(function(){
 		</div>
 		<div class="card-footer">
 			<div class="offset-md-5">
-				<button type="submit" class="btn btn-default">Submit</button>
+				<button type="submit" class="btn btn-default">Update</button>
 			</div>
 		</div>
 	</div>

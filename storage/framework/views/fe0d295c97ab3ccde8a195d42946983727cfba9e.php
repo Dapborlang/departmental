@@ -43,8 +43,6 @@ $(document).ready(function(){
 		$("#bardcode").focus();
 		e.preventDefault();
 	});
-	
-
 });
 
 function remove(id)

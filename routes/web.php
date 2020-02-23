@@ -22,15 +22,19 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('formpopulate','FormPopulateController');
 Route::get('formpopulateall','FormPopulateController@resources');
-Route::get('formpopulateall','FormPopulateController@resources');
+Route::resource('formpopulateindex','FormPopulateIndexController');
 
-Route::resource('formbuilder/{id}','FormBuilderController',['except' => [
-    'show','edit'
-]]);
+Route::get('formbuilder/{id}','FormBuilderController@index');
+Route::get('formbuilder/{id}/create','FormBuilderController@create');
+Route::post('formbuilder/{id}','FormBuilderController@store');
+
+Route::get('frmbuilder/{id}/{cid}','FormBuilderController@show');
+Route::get('frmbuilder/edit/{id}/{cid}','FormBuilderController@edit');
+Route::put('frmbuilder/update/{id}/{cid}','FormBuilderController@update');
 
 Route::resource('counter','SaleController');
 Route::post('getbarcode','ProductController@getBarcode');
-Route::resource('formpopulateindex','FormPopulateIndexController');
 Route::resource('product','ProductController');
 Route::post('stock','ProductController@getStock');
+Route::put('stock/update/{id}','ProductController@update');
 

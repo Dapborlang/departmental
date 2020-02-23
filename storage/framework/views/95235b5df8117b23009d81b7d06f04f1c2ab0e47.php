@@ -24,7 +24,7 @@
 			            <td><?php echo e($item1-> $item); ?></td>
 					<?php endif; ?>
 				<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-				<td><a class="btn btn-info" href="<?php echo e(url('/')); ?>/<?php echo e($model->route); ?>/<?php echo e($item1->id); ?>/edit">Edit</a></td>
+				<td><a class="btn btn-info" href="<?php echo e(url('/')); ?>/frmbuilder/edit/<?php echo e($model->id); ?>/<?php echo e($item1->id); ?>">Edit</a></td>
 			</tr>
 			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 		</table>

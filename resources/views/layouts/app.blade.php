@@ -18,6 +18,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('jquery-ui/jquery-ui.min.css') }}" rel="stylesheet">
+    
     @yield('script')
 </head>
 <body @yield('body')>

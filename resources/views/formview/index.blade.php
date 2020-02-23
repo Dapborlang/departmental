@@ -25,7 +25,7 @@
 			            <td>{{ $item1-> $item}}</td>
 					@endif
 				@endforeach
-				<td><a class="btn btn-info" href="{{ url('/') }}/{{$model->route}}/{{$item1->id}}/edit">Edit</a></td>
+				<td><a class="btn btn-info" href="{{ url('/') }}/frmbuilder/edit/{{$model->id}}/{{$item1->id}}">Edit</a></td>
 			</tr>
 			@endforeach
 		</table>

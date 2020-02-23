@@ -42,8 +42,10 @@ $(document).ready(function(){
 
 	    </div>
 	<?php endif; ?>
-	<form id="partybillForm" method="POST" action="<?php echo e(url('/')); ?>/<?php echo e($model->route); ?>/<?php echo e($model->id); ?>" target="">
+	<form method="POST" action="<?php echo e(url('/')); ?>/frmbuilder/update/<?php echo e($model->id); ?>/<?php echo e($content->id); ?>" target="">
 	<?php echo e(csrf_field()); ?>
+
+	<?php echo e(method_field('PUT')); ?>
 
 	<div class="card bg-secondary text-white">
 		<div class="card-header bg-info"><?php echo e($model->header); ?></div>
@@ -93,7 +95,7 @@ $(document).ready(function(){
 		                	<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 		                </select>
 		                <?php else: ?>
-		                <input type="text" class="form-control <?php if(isset($class) && array_key_exists($item, $class)): ?> <?php echo e($class[$item]); ?> <?php endif; ?>" id="<?php echo e($item); ?>" name="<?php echo e($item); ?>">
+		                <input type="text" class="form-control <?php if(isset($class) && array_key_exists($item, $class)): ?> <?php echo e($class[$item]); ?> <?php endif; ?>" id="<?php echo e($item); ?>" name="<?php echo e($item); ?>" value="<?php echo e($content-> $item); ?>">
 		                <?php endif; ?>
 					</div>
 				</div>
@@ -104,11 +106,11 @@ $(document).ready(function(){
 		</div>
 		<div class="card-footer">
 			<div class="offset-md-5">
-				<button type="submit" class="btn btn-default">Submit</button>
+				<button type="submit" class="btn btn-default">Update</button>
 			</div>
 		</div>
 	</div>
 	</form>
 </div>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Bitnami\wampstack-7.3.10-0\apache2\Braddy\resources\views/formview/create.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Bitnami\wampstack-7.3.10-0\apache2\Braddy\resources\views/formview/edit.blade.php ENDPATH**/ ?>

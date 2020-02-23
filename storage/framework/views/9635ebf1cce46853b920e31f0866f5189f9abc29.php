@@ -8,6 +8,12 @@
 
 <?php $__env->startSection('content'); ?>
 <div class="container-fluid p-3 my-3 border">	
+	<?php if(session()->has('message')): ?>
+	    <div class="alert alert-success">
+	        <?php echo e(session()->get('message')); ?>
+
+	    </div>
+	<?php endif; ?>
 	<div class="card bg-light text-black">
 		<div class="card-header bg-info"><?php echo e($product->name); ?></div>
 		<div class="card-body">	
@@ -22,7 +28,7 @@
 				<tr>
 					<td><?php echo e($loop->iteration); ?></td>
 					<td><?php echo e($item->created_at); ?></td>
-					<td><?php echo e($item->quantity); ?></td>
+					<td><form method="POST" action="<?php echo e(url('/')); ?>/stock/update/<?php echo e($item->id); ?>" ><?php echo e(csrf_field()); ?><?php echo e(method_field('PUT')); ?><input type="text" name="quantity" value="<?php echo e($item->quantity); ?>"><button>Update</button></form></td>
 					<td><?php echo e($item->type); ?></td>
 				</tr>
 				<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

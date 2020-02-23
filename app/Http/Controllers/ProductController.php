@@ -84,9 +84,12 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
-        //
+        $detail=ProductDetail::findOrFail($id);
+        $detail->quantity = $request->quantity;
+        $detail->save();
+        return redirect('product')->with('message','Updated Successfully');
     }
 
     /**
