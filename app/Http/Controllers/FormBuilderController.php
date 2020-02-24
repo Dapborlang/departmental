@@ -25,6 +25,7 @@ class FormBuilderController extends Controller
         $masterKey=json_decode($model->index->master_keys, true);
         $foreign=json_decode($model->index->foreign_keys, true);
         $class=json_decode($model->index->class, true);
+        $attribute=json_decode($model->index->attribute, true);
         $scriptKey=json_decode($model->index->script, true);
         $select=array();
         $master=array();
@@ -50,7 +51,7 @@ class FormBuilderController extends Controller
 
         $columns = \DB::connection()->getSchemaBuilder()->getColumnListing($model->table_name);
 
-        return view('formview.create', compact('columns','model','select','master','scriptKey','class')); 
+        return view('formview.create', compact('columns','model','select','master','scriptKey','class','attribute')); 
     }
 
     
@@ -75,6 +76,7 @@ class FormBuilderController extends Controller
         $masterKey=json_decode($model->index->master_keys, true);
         $foreign=json_decode($model->index->foreign_keys, true);
         $class=json_decode($model->index->class, true);
+        $attribute=json_decode($model->index->attribute, true);
         $scriptKey=json_decode($model->index->script, true);
         $select=array();
         $master=array();
@@ -102,7 +104,7 @@ class FormBuilderController extends Controller
 
         $values='App\\'.$model->model;
         $content=$values::findOrFail($cid);
-        return view('formview.edit', compact('columns','model','select','master','scriptKey','class','content'));
+        return view('formview.edit', compact('columns','model','select','master','scriptKey','class','content','attribute'));
     }
 
     

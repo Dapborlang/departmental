@@ -93,7 +93,7 @@ $(document).ready(function(){
 		                	<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 		                </select>
 		                <?php else: ?>
-		                <input type="text" class="form-control <?php if(isset($class) && array_key_exists($item, $class)): ?> <?php echo e($class[$item]); ?> <?php endif; ?>" id="<?php echo e($item); ?>" name="<?php echo e($item); ?>">
+		                <input type="text" class="form-control <?php if(isset($class) && array_key_exists($item, $class)): ?> <?php echo e($class[$item]); ?> <?php endif; ?>" id="<?php echo e($item); ?>" name="<?php echo e($item); ?>" <?php if(isset($attribute) && array_key_exists($item, $attribute)): ?> <?php echo e($attribute[$item]); ?> <?php endif; ?>>
 		                <?php endif; ?>
 					</div>
 				</div>
